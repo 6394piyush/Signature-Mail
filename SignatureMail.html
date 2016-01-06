@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Signature Mail</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <style>
+        
+        #container{
+            height:600px;
+            padding:25px;
+        }
+        #container section{
+            display: inline-block;
+            height: 475px;
+            width: 40%;
+            padding: 10px;
+            vertical-align: top;
+           
+        }
+        #container #right{
+            background: activeborder;
+        }
+        #container #left{
+            background:khaki; 
+        }
+        
+        input{
+            border-radius: 4px;
+            border-color: blue;
+        }
+        .tab-content.active{
+            display:block;
+        }
+        .tab-content.hide{
+            display:none;
+        }
+        li{
+            display: inline-block;
+        }
+   
+     </style>
+     
+     
+     
+     
+       <script>
+           
+        //for getting all values
+       function SignatureNameOnKeyPress(event){
+           var F_name=document.getElementById("F_name").value;
+          
+           var append=event.which;
+           ShowValuesOnKeyPress(F_name,append);
+           
+           
+       }
+        //for showing all values
+        function ShowValuesOnKeyPress(values,append){
+            
+            document.getElementById("Fname").innerHTML=values+String.fromCharCode(append);
+            
+            
+        }
+        function ShowTabContentsLogo(){
+           document.getElementById("logo").className="active";
+           document.getElementById("home").className="tab-content hide";
+           document.getElementById("social").className="tab-content hide";
+           document.getElementById("style").className="tab-content hide";
+        
+        
+            
+    }
+        function ShowTabContentsHome(){
+          
+           document.getElementById("home").className="active";
+           document.getElementById("logo").className="tab-content hide";
+           document.getElementById("social").className="tab-content hide";
+           document.getElementById("style").className="tab-content hide";
+
+          
+    }
+        function ShowTabContentsSocial(){
+          
+           document.getElementById("social").className="active";
+           document.getElementById("logo").className="tab-content hide";
+           document.getElementById("home").className="tab-content hide";
+           document.getElementById("style").className="tab-content hide";
+
+    }
+        function ShowTabContentsStyle(){
+          
+           document.getElementById("style").className="active";
+                      
+           document.getElementById("home").className="tab-content hide";
+           document.getElementById("social").className="tab-content hide";
+           document.getElementById("logo").className="tab-content hide";
+
+            }
+       
+        
+        
+        
+    </script>
+   
+    </head>
+     <body>
+         <ul class="nav nav-tabs">
+             <li class="active"><a data-toggle="tab" href="#home" onclick="ShowTabContentsHome()">HOME</a></li>
+             <li><a data-toggle="tab" href="#logo" onclick="ShowTabContentsLogo()">LOGO</a></li>
+             <li><a data-toggle="tab" href="#home" onclick="ShowTabContentsSocial()">SOCIAL</a></li>
+             <li><a data-toggle="tab" href="#home" onclick="ShowTabContentsStyle()">STYLE</a></li>
+     
+         </ul>
+         <div class="tab-content">
+             <div id="home" class="tab-content hide">
+                 
+         <section id='container'>
+        <section id="left">
+        <div id="Input_menu">
+            <table id='input_values'>
+                <tr><td>First Name </td><td><input type="text" id="F_name" onKeyPress="SignatureNameOnKeyPress(event,this)"> </td></tr>
+                <tr><td>Last Name </td><td><input type="text" id="L_name"></td> </tr>
+                  <tr><td>Title </td><td><input type="text" id="title"></td> </tr>
+                <tr><td>Email </td><td><input type="email" id="Email"></td> </tr>
+                <tr><td>Company's Name </td><td><input type="text" id="C_name"></td> </tr>
+        
+                <tr><td>Website </td><td><input type="url" id="Website"></td> </tr>
+                <tr><td>Office Phone </td><td><input type="text" id="O_phone"></td> </tr>
+                
+                <tr><td>Fax </td><td><input type="text" id="Fax"></td> </tr>
+                <tr><td>Address </td><td><input type="text" id="Address"></td> </tr>
+                <tr><td>Address Line 1 </td><td><input type="text" id="Address1"></td> </tr>
+                <tr><td>City </td><td><input type="text" id="City"> </td></tr>
+                <tr><td>Country </td><td><input type="text" id="Country"></td> </tr>
+                <tr><td>Postal Code </td><td><input type="text" id="Postal"></<table border="0" width="20" cellspacing="2" cellpadding="5">
+                         
+                         
+            </table>
+        </div>
+    </section>
+            
+        <section id="right">
+                    
+            <div id='Fname'>
+                
+            </div>
+        
+           
+        </section>
+            </section>
+                  </div> 
+             <div id="logo" class="tab-content hide">this is logo
+                 <p>inside logo</p>
+                 
+                  
+             </div> 
+             <div id="social" class="tab-content hide">this is social
+                 <p>inside social</p>
+             </div> 
+             <div id="style" class="tab-content hide">this is style
+                 <p>inside style</p>
+             </div> 
+         </div>
+         
+        </body>
+</html>
