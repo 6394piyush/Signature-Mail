@@ -12,18 +12,19 @@ and open the template in the editor.
      <style>
         
         #container{
-            height:600px;
+            height:700px;
             padding:25px;
         }
         #container section{
             display: inline-block;
-            height: 475px;
-            width: 40%;
+            height: 675px;
+            width: 60%;
             padding: 10px;
             vertical-align: top;
            
         }
         #container #right{
+            width:300px;
             background: activeborder;
         }
         #container #left{
@@ -50,59 +51,175 @@ and open the template in the editor.
      
      
        <script>
+          
            
         //for getting all values
-       function SignatureNameOnKeyPress(event){
-           var F_name=document.getElementById("F_name").value;
-          
-           var append=event.which;
-           ShowValuesOnKeyPress(F_name,append);
-           
-           
-       }
-        //for showing all values
-        function ShowValuesOnKeyPress(values,append){
-            
-            document.getElementById("Fname").innerHTML=values+String.fromCharCode(append);
-            
-            
-        }
-        function ShowTabContentsLogo(){
-           document.getElementById("logo").className="active";
-           document.getElementById("home").className="tab-content hide";
-           document.getElementById("social").className="tab-content hide";
-           document.getElementById("style").className="tab-content hide";
-        
-        
-            
-    }
-        function ShowTabContentsHome(){
-          
-           document.getElementById("home").className="active";
-           document.getElementById("logo").className="tab-content hide";
-           document.getElementById("social").className="tab-content hide";
-           document.getElementById("style").className="tab-content hide";
-
-          
-    }
-        function ShowTabContentsSocial(){
-          
-           document.getElementById("social").className="active";
-           document.getElementById("logo").className="tab-content hide";
-           document.getElementById("home").className="tab-content hide";
-           document.getElementById("style").className="tab-content hide";
-
-    }
-        function ShowTabContentsStyle(){
-          
-           document.getElementById("style").className="active";
-                      
-           document.getElementById("home").className="tab-content hide";
-           document.getElementById("social").className="tab-content hide";
-           document.getElementById("logo").className="tab-content hide";
-
-            }
        
+           
+       function SignatureTitleOnKeyPress(event){
+           var val=document.getElementById("title").value;
+          var id=document.getElementById("title").name;
+          SignatureValuesAppend(event,val,id);
+      }
+      function SignatureTitleOnChange(input){
+          var id=document.getElementById("title").name;
+          ShowValuesOnKeyPress(input.value,id);
+      }
+       function SignatureNameOnKeyPress(event){
+           var val=document.getElementById("F_name").value;
+          var id=document.getElementById("F_name").name;
+          SignatureValuesAppend(event,val,id);
+      }
+      function SignatureNameOnChange(input){
+          var id=document.getElementById("F_name").name;
+          ShowValuesOnKeyPress(input.value,id);
+      }
+       function SignatureEmailOnKeyPress(event){
+           var val=document.getElementById("Email").value;
+          var id=document.getElementById("Email").name;
+          SignatureValuesAppend(event,val,id);
+      }
+      function SignatureEmailOnChange(input){
+          var id=document.getElementById("Email").name;
+          ShowValuesOnKeyPress(input.value,id);
+      }
+      
+       function SignatureCompanyOnKeyPress(event){
+           var val=document.getElementById("C_name").value;
+          var id=document.getElementById("C_name").name;
+          SignatureValuesAppend(event,val,id);
+      }
+      function SignatureCompanyOnChange(input){
+          var id=document.getElementById("C_name").name;
+          ShowValuesOnKeyPress(input.value,id);
+      }
+      
+       function SignatureWebsiteOnKeyPress(event){
+            var val=document.getElementById("Website").value;
+          var id=document.getElementById("Website").name;
+            SignatureValuesAppend(event,val,id);
+      }
+      function SignatureWebsiteOnChange(input){
+          var id=document.getElementById("Website").name;
+          ShowValuesOnKeyPress(input.value,id);
+      }
+      
+       function SignatureOfficePhoneOnKeyPress(event){
+           var val=document.getElementById("O_phone").value;
+          var id=document.getElementById("O_phone").name;
+          SignatureValuesAppend(event,val,id);
+      }
+      function SignatureOfficePhoneOnChange(input){
+          var id=document.getElementById("O_phone").name;
+          ShowValuesOnKeyPress(input.value,id);
+      }
+       function SignatureMobileOnKeyPress(event){
+             var val=document.getElementById("Mobile").value;
+            var id=document.getElementById("Mobile").name;
+            SignatureValuesAppend(event,val,id);
+      }
+      function SignatureMobileOnChange(input){
+          var id=document.getElementById("Mobile").name;
+          ShowValuesOnKeyPress(input.value,id);
+      }
+       function SignatureFaxOnKeyPress(event){
+           var val=document.getElementById("Fax").value;
+          var id=document.getElementById("Fax").name;
+          SignatureValuesAppend(event,val,id);
+      }
+      function SignatureFaxOnChange(input){
+          var id=document.getElementById("Fax").name;
+          ShowValuesOnKeyPress(input.value,id);
+      }
+       function SignatureAddressOnKeyPress(event){
+                var val=document.getElementById("Address").value;
+          var id=document.getElementById("Address").name;
+          SignatureValuesAppend(event,val,id);
+      }
+      function SignatureAddressOnChange(input){
+          var id=document.getElementById("Address").name;
+          ShowValuesOnKeyPress(input.value,id);
+      }
+       function SignatureAddress1OnKeyPress(event){
+           var val=document.getElementById("Address1").value;
+          var id=document.getElementById("Address1").name;
+          SignatureValuesAppend(event,val,id);
+      }
+      function SignatureAddress1OnChange(input){
+          var id=document.getElementById("Address1").name;
+          ShowValuesOnKeyPress(input.value,id);
+      }
+      
+      
+      function SignatureValuesAppend(event,values,id)
+      {
+           var append=String.fromCharCode(event.which);
+           var SignatureTitle=values+append;
+          
+           ShowValuesOnKeyPress(SignatureTitle,id);
+          }
+        //for showing all values
+        function ShowValuesOnKeyPress(values,name){
+          
+           switch(name){
+               case "FirstName":{
+               document.getElementById("Fname").innerHTML="<b>"+values+"</b>";
+               
+               break;
+           }
+       case "Title":
+           {    
+               document.getElementById("Title1").innerHTML=values;
+               break;
+           }
+       case "Website":
+           {   
+               document.getElementById("Website1").innerHTML=values;
+               break;
+           }
+       case "C_name":
+           {    
+               document.getElementById("C_name1").innerHTML=values;
+               break;
+           }
+       case "Email":
+           {    
+               document.getElementById("Email1").innerHTML=values;
+               break;
+           }
+       case "Mobile":
+           
+          {   
+               document.getElementById("Mobile1").innerHTML=values;
+               break;
+           }
+       case "O_phone":
+           {    
+               document.getElementById("O_phone1").innerHTML=values;
+               break;
+           }
+       case "Fax":
+           {    
+               document.getElementById("Fax1").innerHTML=values;
+               break;
+           }
+       case "Address12":
+           {    
+               document.getElementById("Address1").innerHTML=values;
+               break;
+           }
+       case "Address1":
+           {    
+               document.getElementById("AddressLine1").innerHTML=values;
+               break;
+           }
+       case "Address":{
+               document.getElementById("AddressLine").innerHTML=values;
+               break;
+       }
+                
+               
+       }}
         
         
         
@@ -113,8 +230,8 @@ and open the template in the editor.
          <ul class="nav nav-tabs">
              <li class="active"><a data-toggle="tab" href="#home" onclick="ShowTabContentsHome()">HOME</a></li>
              <li><a data-toggle="tab" href="#logo" onclick="ShowTabContentsLogo()">LOGO</a></li>
-             <li><a data-toggle="tab" href="#home" onclick="ShowTabContentsSocial()">SOCIAL</a></li>
-             <li><a data-toggle="tab" href="#home" onclick="ShowTabContentsStyle()">STYLE</a></li>
+             <li><a data-toggle="tab" href="#social" onclick="ShowTabContentsSocial()">SOCIAL</a></li>
+             <li><a data-toggle="tab" href="#style" onclick="ShowTabContentsStyle()">STYLE</a></li>
      
          </ul>
          <div class="tab-content">
@@ -124,34 +241,40 @@ and open the template in the editor.
         <section id="left">
         <div id="Input_menu">
             <table id='input_values'>
-                <tr><td>First Name </td><td><input type="text" id="F_name" onKeyPress="SignatureNameOnKeyPress(event,this)"> </td></tr>
-                <tr><td>Last Name </td><td><input type="text" id="L_name"></td> </tr>
-                  <tr><td>Title </td><td><input type="text" id="title"></td> </tr>
-                <tr><td>Email </td><td><input type="email" id="Email"></td> </tr>
-                <tr><td>Company's Name </td><td><input type="text" id="C_name"></td> </tr>
-        
-                <tr><td>Website </td><td><input type="url" id="Website"></td> </tr>
-                <tr><td>Office Phone </td><td><input type="text" id="O_phone"></td> </tr>
+                <tr><td>First Name </td><td><input type="text" id="F_name" name="FirstName" onKeyPress="SignatureNameOnKeyPress(event)" onchange="SignatureNameOnChange(this)" onblur="SignatureNameOnChange(this)"> </td>
+                    <td>Mobile</td><td><input type="text" id="Mobile" name="Mobile" onkeypress="SignatureMobileOnKeyPress(event)" onchange="SignatureMobileOnChange(this)" onblur="SignatureMobileOnChange(this)"></td>
+                </tr>
                 
-                <tr><td>Fax </td><td><input type="text" id="Fax"></td> </tr>
-                <tr><td>Address </td><td><input type="text" id="Address"></td> </tr>
-                <tr><td>Address Line 1 </td><td><input type="text" id="Address1"></td> </tr>
-                <tr><td>City </td><td><input type="text" id="City"> </td></tr>
-                <tr><td>Country </td><td><input type="text" id="Country"></td> </tr>
-                <tr><td>Postal Code </td><td><input type="text" id="Postal"></<table border="0" width="20" cellspacing="2" cellpadding="5">
+                <tr><td>Title </td><td><input type="text" id="title" name="Title" onKeyPress="SignatureTitleOnKeyPress(event)" onchange="SignatureTitleOnChange(this)" onblur="SignatureTitleOnChange(this)"></td> 
+                      <td>Email </td><td><input type="email" id="Email" name="Email" onKeyPress="SignatureEmailOnKeyPress(event)" onchange="SignatureEmailOnChange(this)" onblur="SignatureEmailOnChange(this)"></td> </tr>
+                  <tr><td>Company's Name </td><td><input type="text" id="C_name" name=C_name onKeyPress="SignatureCompanyOnKeyPress(event)" onchange="SignatureCompanyOnChange(this)" onblur="SignatureCompanyOnChange(this)"></td>
+                    <td>Website </td><td><input type="url" id="Website" name="Website" onKeyPress="SignatureWebsiteOnKeyPress(event)" onchange="SignatureWebsiteOnChange(this)" onblur="SignatureWebsiteOnChange(this)"></td> </tr>
+                  <tr><td>Office Phone </td><td><input type="text" id="O_phone" name="O_phone" onKeyPress="SignatureOfficePhoneOnKeyPress(event)" onchange="SignatureOfficePhoneOnChange(this)" onblur="SignatureOfficePhoneOnChange(this)"></td> 
+                      <td>Fax </td><td><input type="text" id="Fax" name="Fax" onKeyPress="SignatureFaxOnKeyPress(event)" onchange="SignatureFaxOnChange(this)" onblur="SignatureFaxOnChange(this)"></td> </tr>
+                <tr><td>Address </td><td><input type="text" id="Address" name="Address" onKeyPress="SignatureAddressOnKeyPress(event)" onchange="SignatureAddressOnChange(this)" onblur="SignatureAddressOnChange(this)"></td> 
+                    <td>Address Line 1 </td><td><input type="text" id="Address1" name="Address1" onKeyPress="SignatureAddress1OnKeyPress(event)" onchange="SignatureAddress1OnChange(this)" onblur="SignatureAddress1OnChange(this)"></td> </tr>
                          
                          
             </table>
+            <div><button onclick="CodeToShow()">Show Code</button></div>
+           
         </div>
+           
     </section>
             
         <section id="right">
                     
-            <div id='Fname'>
-                
-            </div>
-        
-           
+            <div id='Fname'> </div>
+            <div id="Title1"></div>
+            <div id="Email1"></div>
+            <div id="Mobile1"></div>
+            <div id="C_name1"></div>
+            <div id="O_phone1"> </div>
+            <div id="Fax1"></div>
+            <div id="AddressLine" ></div>
+            <div id="AddressLine1"></div>
+            <div id="Website1"></div>
+            
         </section>
             </section>
                   </div> 
@@ -167,6 +290,66 @@ and open the template in the editor.
                  <p>inside style</p>
              </div> 
          </div>
-         
+         <script>
+             
+             var home=document.getElementById("home");
+             var logo=document.getElementById("logo");
+             var social=document.getElementById("social");
+             var style=document.getElementById("style");
+             
+           
+             function ShowTabContentsLogo(){
+           logo.className="active";
+           home.className="tab-content hide";
+           social.className="tab-content hide";
+           style.className="tab-content hide";
+        
+        
+            
+    }
+        function ShowTabContentsHome(){
+          
+           home.className="active";
+           logo.className="tab-content hide";
+           social.className="tab-content hide";
+           style.className="tab-content hide";
+        
+          
+    }
+        function ShowTabContentsSocial(){
+           social.className="active";
+           logo.className="tab-content hide";
+           home.className="tab-content hide";
+           style.className="tab-content hide";
+        
+    }
+        function ShowTabContentsStyle(){
+          
+           style.className="active";
+           logo.className="tab-content hide";
+           social.className="tab-content hide";
+           home.className="tab-content hide";
+        
+            }
+            function CodeToShow(){
+                var code_to_show=document.getElementById("right").innerHTML;
+                code_to_show=replaceAll(code_to_show,"<","&lt");
+                
+                code_to_show=replaceAll(code_to_show,">","&gt");
+        document.getElementById("CodeFetch").innerHTML=code_to_show;   
+        
+            }
+        function escapeRegExp(str) {
+                return str.replace(/([.*+?^=!:${}()|\[\]\/\\])/g, "\\$1");
+            }
+
+            function replaceAll(str, find, replace) {
+                return str.replace(new RegExp(escapeRegExp(find), 'g'), replace);
+            }
+         </script>
+         <div id="CodeFetch">
+             
+             
+         </div>
         </body>
 </html>
