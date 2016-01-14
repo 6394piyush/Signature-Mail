@@ -1,355 +1,248 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
     <head>
         <title>Signature Mail</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <style>
-        
-        #container{
-            height:700px;
-            padding:25px;
-        }
-        #container section{
-            display: inline-block;
-            height: 675px;
-            width: 60%;
-            padding: 10px;
-            vertical-align: top;
-           
-        }
-        #container #right{
-            width:300px;
-            background: activeborder;
-        }
-        #container #left{
-            background:khaki; 
-        }
-        
-        input{
-            border-radius: 4px;
-            border-color: blue;
-        }
-        .tab-content.active{
-            display:block;
-        }
-        .tab-content.hide{
-            display:none;
-        }
-        li{
-            display: inline-block;
-        }
-   
-     </style>
-     
-     
-     
-     
-       <script>
-          
-           
-        //for getting all values
-       
-           
-       function SignatureTitleOnKeyPress(event){
-           var val=document.getElementById("title").value;
-          var id=document.getElementById("title").name;
-          SignatureValuesAppend(event,val,id);
-      }
-      function SignatureTitleOnChange(input){
-          var id=document.getElementById("title").name;
-          ShowValuesOnKeyPress(input.value,id);
-      }
-       function SignatureNameOnKeyPress(event){
-           var val=document.getElementById("F_name").value;
-          var id=document.getElementById("F_name").name;
-          SignatureValuesAppend(event,val,id);
-      }
-      function SignatureNameOnChange(input){
-          var id=document.getElementById("F_name").name;
-          ShowValuesOnKeyPress(input.value,id);
-      }
-       function SignatureEmailOnKeyPress(event){
-           var val=document.getElementById("Email").value;
-          var id=document.getElementById("Email").name;
-          SignatureValuesAppend(event,val,id);
-      }
-      function SignatureEmailOnChange(input){
-          var id=document.getElementById("Email").name;
-          ShowValuesOnKeyPress(input.value,id);
-      }
-      
-       function SignatureCompanyOnKeyPress(event){
-           var val=document.getElementById("C_name").value;
-          var id=document.getElementById("C_name").name;
-          SignatureValuesAppend(event,val,id);
-      }
-      function SignatureCompanyOnChange(input){
-          var id=document.getElementById("C_name").name;
-          ShowValuesOnKeyPress(input.value,id);
-      }
-      
-       function SignatureWebsiteOnKeyPress(event){
-            var val=document.getElementById("Website").value;
-          var id=document.getElementById("Website").name;
-            SignatureValuesAppend(event,val,id);
-      }
-      function SignatureWebsiteOnChange(input){
-          var id=document.getElementById("Website").name;
-          ShowValuesOnKeyPress(input.value,id);
-      }
-      
-       function SignatureOfficePhoneOnKeyPress(event){
-           var val=document.getElementById("O_phone").value;
-          var id=document.getElementById("O_phone").name;
-          SignatureValuesAppend(event,val,id);
-      }
-      function SignatureOfficePhoneOnChange(input){
-          var id=document.getElementById("O_phone").name;
-          ShowValuesOnKeyPress(input.value,id);
-      }
-       function SignatureMobileOnKeyPress(event){
-             var val=document.getElementById("Mobile").value;
-            var id=document.getElementById("Mobile").name;
-            SignatureValuesAppend(event,val,id);
-      }
-      function SignatureMobileOnChange(input){
-          var id=document.getElementById("Mobile").name;
-          ShowValuesOnKeyPress(input.value,id);
-      }
-       function SignatureFaxOnKeyPress(event){
-           var val=document.getElementById("Fax").value;
-          var id=document.getElementById("Fax").name;
-          SignatureValuesAppend(event,val,id);
-      }
-      function SignatureFaxOnChange(input){
-          var id=document.getElementById("Fax").name;
-          ShowValuesOnKeyPress(input.value,id);
-      }
-       function SignatureAddressOnKeyPress(event){
-                var val=document.getElementById("Address").value;
-          var id=document.getElementById("Address").name;
-          SignatureValuesAppend(event,val,id);
-      }
-      function SignatureAddressOnChange(input){
-          var id=document.getElementById("Address").name;
-          ShowValuesOnKeyPress(input.value,id);
-      }
-       function SignatureAddress1OnKeyPress(event){
-           var val=document.getElementById("Address1").value;
-          var id=document.getElementById("Address1").name;
-          SignatureValuesAppend(event,val,id);
-      }
-      function SignatureAddress1OnChange(input){
-          var id=document.getElementById("Address1").name;
-          ShowValuesOnKeyPress(input.value,id);
-      }
-      
-      
-      function SignatureValuesAppend(event,values,id)
-      {
-           var append=String.fromCharCode(event.which);
-           var SignatureTitle=values+append;
-          
-           ShowValuesOnKeyPress(SignatureTitle,id);
-          }
-        //for showing all values
-        function ShowValuesOnKeyPress(values,name){
-          
-           switch(name){
-               case "FirstName":{
-               document.getElementById("Fname").innerHTML="<b>"+values+"</b>";
-               
-               break;
-           }
-       case "Title":
-           {    
-               document.getElementById("Title1").innerHTML=values;
-               break;
-           }
-       case "Website":
-           {   
-               document.getElementById("Website1").innerHTML=values;
-               break;
-           }
-       case "C_name":
-           {    
-               document.getElementById("C_name1").innerHTML=values;
-               break;
-           }
-       case "Email":
-           {    
-               document.getElementById("Email1").innerHTML=values;
-               break;
-           }
-       case "Mobile":
-           
-          {   
-               document.getElementById("Mobile1").innerHTML=values;
-               break;
-           }
-       case "O_phone":
-           {    
-               document.getElementById("O_phone1").innerHTML=values;
-               break;
-           }
-       case "Fax":
-           {    
-               document.getElementById("Fax1").innerHTML=values;
-               break;
-           }
-       case "Address12":
-           {    
-               document.getElementById("Address1").innerHTML=values;
-               break;
-           }
-       case "Address1":
-           {    
-               document.getElementById("AddressLine1").innerHTML=values;
-               break;
-           }
-       case "Address":{
-               document.getElementById("AddressLine").innerHTML=values;
-               break;
-       }
-                
-               
-       }}
-        
-        
-        
-    </script>
-   
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" type="text/css" href="StyleMail.css" />     
     </head>
-     <body>
-         <ul class="nav nav-tabs">
-             <li class="active"><a data-toggle="tab" href="#home" onclick="ShowTabContentsHome()">HOME</a></li>
-             <li><a data-toggle="tab" href="#logo" onclick="ShowTabContentsLogo()">LOGO</a></li>
-             <li><a data-toggle="tab" href="#social" onclick="ShowTabContentsSocial()">SOCIAL</a></li>
-             <li><a data-toggle="tab" href="#style" onclick="ShowTabContentsStyle()">STYLE</a></li>
-     
-         </ul>
-         <div class="tab-content">
-             <div id="home" class="tab-content hide">
-                 
-         <section id='container'>
-        <section id="left">
-        <div id="Input_menu">
-            <table id='input_values'>
-                <tr><td>First Name </td><td><input type="text" id="F_name" name="FirstName" onKeyPress="SignatureNameOnKeyPress(event)" onchange="SignatureNameOnChange(this)" onblur="SignatureNameOnChange(this)"> </td>
-                    <td>Mobile</td><td><input type="text" id="Mobile" name="Mobile" onkeypress="SignatureMobileOnKeyPress(event)" onchange="SignatureMobileOnChange(this)" onblur="SignatureMobileOnChange(this)"></td>
-                </tr>
+    <body>
+        <h1 id="heading">MAIL SIGNATURE</h1>
+        <section id="page">
+            <section id="left">
+                <ul class="nav nav-pills">
+                    <li><a data-toggle="#pill_a" href="#home" onclick="ShowTabContentsHome()">HOME</a></li>
+                    <li><a data-toggle="#pill_b" href="#logo" onclick="ShowTabContentsLogo()">LOGO</a></li>
+                    <li><a data-toggle="#pill_c" href="#social" onclick="ShowTabContentsSocial()">SOCIAL</a></li>
+                    <li><a data-toggle="#pill_d" href="#style" onclick="ShowTabContentsStyle()">STYLE</a></li>
+                </ul>
                 
-                <tr><td>Title </td><td><input type="text" id="title" name="Title" onKeyPress="SignatureTitleOnKeyPress(event)" onchange="SignatureTitleOnChange(this)" onblur="SignatureTitleOnChange(this)"></td> 
-                      <td>Email </td><td><input type="email" id="Email" name="Email" onKeyPress="SignatureEmailOnKeyPress(event)" onchange="SignatureEmailOnChange(this)" onblur="SignatureEmailOnChange(this)"></td> </tr>
-                  <tr><td>Company's Name </td><td><input type="text" id="C_name" name=C_name onKeyPress="SignatureCompanyOnKeyPress(event)" onchange="SignatureCompanyOnChange(this)" onblur="SignatureCompanyOnChange(this)"></td>
-                    <td>Website </td><td><input type="url" id="Website" name="Website" onKeyPress="SignatureWebsiteOnKeyPress(event)" onchange="SignatureWebsiteOnChange(this)" onblur="SignatureWebsiteOnChange(this)"></td> </tr>
-                  <tr><td>Office Phone </td><td><input type="text" id="O_phone" name="O_phone" onKeyPress="SignatureOfficePhoneOnKeyPress(event)" onchange="SignatureOfficePhoneOnChange(this)" onblur="SignatureOfficePhoneOnChange(this)"></td> 
-                      <td>Fax </td><td><input type="text" id="Fax" name="Fax" onKeyPress="SignatureFaxOnKeyPress(event)" onchange="SignatureFaxOnChange(this)" onblur="SignatureFaxOnChange(this)"></td> </tr>
-                <tr><td>Address </td><td><input type="text" id="Address" name="Address" onKeyPress="SignatureAddressOnKeyPress(event)" onchange="SignatureAddressOnChange(this)" onblur="SignatureAddressOnChange(this)"></td> 
-                    <td>Address Line 1 </td><td><input type="text" id="Address1" name="Address1" onKeyPress="SignatureAddress1OnKeyPress(event)" onchange="SignatureAddress1OnChange(this)" onblur="SignatureAddress1OnChange(this)"></td> </tr>
-                         
-                         
-            </table>
-            <div><button onclick="CodeToShow()">Show Code</button></div>
-           
-        </div>
-           
-    </section>
-            
-        <section id="right">
-                    
-            <div id='Fname'> </div>
-            <div id="Title1"></div>
-            <div id="Email1"></div>
-            <div id="Mobile1"></div>
-            <div id="C_name1"></div>
-            <div id="O_phone1"> </div>
-            <div id="Fax1"></div>
-            <div id="AddressLine" ></div>
-            <div id="AddressLine1"></div>
-            <div id="Website1"></div>
-            
-        </section>
-            </section>
-                  </div> 
-             <div id="logo" class="tab-content hide">this is logo
-                 <p>inside logo</p>
-                 
-                  
-             </div> 
-             <div id="social" class="tab-content hide">this is social
-                 <p>inside social</p>
-             </div> 
-             <div id="style" class="tab-content hide">this is style
-                 <p>inside style</p>
-             </div> 
-         </div>
-         <script>
-             
-             var home=document.getElementById("home");
-             var logo=document.getElementById("logo");
-             var social=document.getElementById("social");
-             var style=document.getElementById("style");
-             
-           
-             function ShowTabContentsLogo(){
-           logo.className="active";
-           home.className="tab-content hide";
-           social.className="tab-content hide";
-           style.className="tab-content hide";
-        
-        
-            
-    }
-        function ShowTabContentsHome(){
-          
-           home.className="active";
-           logo.className="tab-content hide";
-           social.className="tab-content hide";
-           style.className="tab-content hide";
-        
-          
-    }
-        function ShowTabContentsSocial(){
-           social.className="active";
-           logo.className="tab-content hide";
-           home.className="tab-content hide";
-           style.className="tab-content hide";
-        
-    }
-        function ShowTabContentsStyle(){
-          
-           style.className="active";
-           logo.className="tab-content hide";
-           social.className="tab-content hide";
-           home.className="tab-content hide";
-        
-            }
-            function CodeToShow(){
-                var code_to_show=document.getElementById("right").innerHTML;
-                code_to_show=replaceAll(code_to_show,"<","&lt");
-                
-                code_to_show=replaceAll(code_to_show,">","&gt");
-        document.getElementById("CodeFetch").innerHTML=code_to_show;   
-        
-            }
-        function escapeRegExp(str) {
-                return str.replace(/([.*+?^=!:${}()|\[\]\/\\])/g, "\\$1");
-            }
+                <div class="tab-content">
+                    <div id="home" class="active">
+                        <h1>Information</h1>
+                        <table id='input_values' class="table-input">
+                            <tr>
+                                <td>Name</td>
+                                <td>:</td>
+                                <td><input type="text" id="F_name" name="FirstName" onKeyPress="SignatureNameOnKeyPress(event)" onchange="SignatureNameOnChange(this)" oninput='SignatureNameOnChange(this,"F_name", "background", this.value)'> </td>  
+                            </tr>
+                            <tr>
+                                <td>Title </td>
+                                <td>:</td>
+                                <td><input type="text" id="title" name="Title" onKeyPress="SignatureTitleOnKeyPress(event)" onchange="SignatureTitleOnChange(this)" oninput="SignatureTitleOnChange(this)"></td> 
+                            </tr>
+                           <tr>
+                                <td>Email </td>
+                                <td>:</td>
+                                <td><input type="email" id="Email" name="Email" onKeyPress="SignatureEmailOnKeyPress(event)" onchange="SignatureEmailOnChange(this)" oninput="SignatureEmailOnChange(this)"></td> 
+                            </tr>
+                            <tr>
+                                <td>Mobile</td>
+                                <td>:</td>
+                                <td><input type="text" id="Mobile" name="Mobile" onkeypress="SignatureMobileOnKeyPress(event)" onchange="SignatureMobileOnChange(this)" oninput="SignatureMobileOnChange(this)"></td>
+                            </tr> 
+                            <tr>
+                                <td>Company's Name </td>
+                                <td>:</td>
+                                <td><input type="text" id="C_name" name=C_name onKeyPress="SignatureCompanyOnKeyPress(event)" onchange="SignatureCompanyOnChange(this)" oninput="SignatureCompanyOnChange(this)"></td>
+                            </tr>
+                            
+                                <td>Office Phone </td>
+                                <td>:</td>
+                                <td><input type="text" id="O_phone" name="O_phone" onKeyPress="SignatureOfficePhoneOnKeyPress(event)" onchange="SignatureOfficePhoneOnChange(this)" oninput="SignatureOfficePhoneOnChange(this)"></td> 
+                            </tr>
+                            <tr>
+                                <td>Fax </td>
+                                <td>:</td>
+                                <td><input type="text" id="Fax" name="Fax" onKeyPress="SignatureFaxOnKeyPress(event)" onchange="SignatureFaxOnChange(this)" oninput="SignatureFaxOnChange(this)"></td> 
+                            </tr>
+                            <tr>
+                                <td>Address</td>
+                                <td>:</td>
+                                <td><input type="text" id="Address" name="Address" onKeyPress="SignatureAddressOnKeyPress(event)" onchange="SignatureAddressOnChange(this)" oninput="SignatureAddressOnChange(this)"></td> 
+                            </tr>
+                            <tr>
+                                <td>Address Line 1 </td>
+                                <td>:</td>
+                                <td><input type="text" id="Address1" name="Address1" onKeyPress="SignatureAddress1OnKeyPress(event)" onchange="SignatureAddress1OnChange(this)" oninput="SignatureAddress1OnChange(this)"></td>
+                            </tr>
+                            <tr>
+                                <td>Website</td>
+                                <td>:</td>
+                                <td><input type="url" id="Website" name="Website" onKeyPress="SignatureWebsiteOnKeyPress(event)" onchange="SignatureWebsiteOnChange(this)" oninput="SignatureWebsiteOnChange(this)"></td> 
+                            </tr>
+                            <tr>
+                        </table>
 
-            function replaceAll(str, find, replace) {
-                return str.replace(new RegExp(escapeRegExp(find), 'g'), replace);
-            }
-         </script>
-         <div id="CodeFetch">
-             
-             
-         </div>
-        </body>
+                    </div> 
+                    <div id="logo" class="tab-content hide">
+                        <h1>Logo</h1>
+                        <h4>Maximum Size:100kb</h4>
+                        <input type="file" onchange="PreviewImageFile()"><br>
+                    </div> 
+                    <div id="social" class="tab-content hide">
+                        <h1>Social</h1>
+                        <form>
+                            <table class="table-input">
+                                <tr>
+                                    <td><b>COMPANY SOCIAL</b></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Facebook </td>
+                                    <td>:</td><td><input type="text" id="Facebook" name="Facebook" onchange="SocialLinkFacebookOnChange(this)"></td>
+                                </tr>
+                                <tr>
+                                    <td>Twitter </td>
+                                    <td>:</td><td><input type="text" id="Twitter" name="Twitter" onchange="SocialLinkTwitterOnChange(this)"></td>
+                                </tr>
+                                <tr>
+                                    <td>Linkedin </td>
+                                    <td>:</td><td><input type="text" id="Linkedin" name="Linkedin" onchange="SocialLinkLinkedinOnChange(this)"></td>
+                                </tr>
+                                <tr>
+                                    <td>Google </td>
+                                    <td>:</td><td><input type="text" id="Google" name="Google" onchange="SocialLinkGoogleOnChange(this)"></td>
+                                </tr>
+                                <tr>
+                                    <td><b>USER SOCIAL</b></td>
+                                    <td></td>
+                                </tr>
+                                 <tr>
+                                    <td>Facebook </td>
+                                    <td>:</td><td><input type="text" id="FacebookUser" name="FacebookUser" onchange="SocialLinkUserFacebookOnChange(this)"></td>
+                                </tr>
+                                <tr>
+                                    <td>Twitter </td>
+                                    <td>:</td><td><input type="text" id="TwitterUser" name="TwitterUser" onchange="SocialLinkUserTwitterOnChange(this)"></td>
+                                </tr>
+                                <tr>
+                                    <td>Linkedin </td>
+                                    <td>:</td><td><input type="text" id="LinkedinUser" name="LinkedinUser" onchange="SocialLinkUserLinkedinOnChange(this)"></td>
+                                </tr>
+                            </table>
+                        </form>
+
+                    </div> 
+                    <div id="style" class="tab-content hide">
+                        <h1>Style</h1>
+                        <table class="table-input">  
+                            <tr>
+                                <td>Foreground Color</td>
+                                <td>:</td>
+                                <td>
+                                    <select oninput="ChangeTextColor(this.value)">
+                                        <option value="0">Select Foreground Color</option>
+                                        <option value="#fff">White</option>
+                                        <option value="#000">Black</option>
+                                        <option value="#f00">Red</option>
+                                        <option value="#32CD32">Lime Green</option>
+                                        <option value="#0000FF">Blue</option>
+                                        <option value="#006400">Dark Green</option>
+                                        <option value="#00FFFF">Aqua</option>
+                                        <option value="##1E90FF">Dodger Blue</option>
+                                        <option value="##2F4F4F">Dark Slate Grey</option>
+                                        <option value="#4B0082">Indigo</option>
+                                        <option value="#800000">Maroon</option>
+                                        <option value="#CD5C5C">Indian Red</option>
+                                        <option value="#FA8072">Salmon</option>
+                                        <option value="#FF00FF">Magenta</option>
+                                        <option value="#FF69B4">Hot Pink</option>
+                                        <option value="#FFD700">Gold</option>
+                                        <option value="#FFFF00">Yellow</option>
+                                        <option value="#FFEBCD">Blanched Almond</option>
+                                        
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Background Color</td>
+                                <td>:</td>
+                                <td>
+                                    <select oninput="ChangeBackgroundColor(this.value)">
+                                        <option value="0">Select Background Color</option>
+                                        <option value="#fff">White</option>
+                                        <option value="#000">Black</option>
+                                        <option value="#f00">Red</option>
+                                        
+                                        <option value="#32CD32">Lime Green</option>
+                                        <option value="#0000FF">Blue</option>
+                                        <option value="#006400">Dark Green</option>
+                                        <option value="#00FFFF">Aqua</option>
+                                        <option value="##1E90FF">Dodger Blue</option>
+                                        <option value="##2F4F4F">Dark Slate Grey</option>
+                                        <option value="#4B0082">Indigo</option>
+                                        <option value="#800000">Maroon</option>
+                                        <option value="#CD5C5C">Indian Red</option>
+                                        <option value="#FA8072">Salmon</option>
+                                        <option value="#FF00FF">Magenta</option>
+                                        <option value="#FF69B4">Hot Pink</option>
+                                        <option value="#FFD700">Gold</option>
+                                        <option value="#FFFF00">Yellow</option>
+                                        <option value="#FFEBCD">Blanched Almond</option>
+                                    </select>
+                                </td> 
+                            </tr>
+                            <tr>
+                                <td>Font Size</td>
+                                <td>:</td>
+                                <td><input type="text" id="Size" oninput="ChangeFontSize(this.value)" /></td> 
+
+                            </tr> </table>
+                    </div> 
+                </div>
+            </section>
+            <section id="right">
+                <div id="signature-preview" >    
+                    <table>
+                        <tr>
+                            <td>
+                                <a href="" id="LogoLink">
+                                    <div id="File1">
+                                        <canvas id="CanvasLogo" height="75" width="75"></canvas>
+                                    </div>
+                                </a>
+                            </td>
+                            <td></td>
+                        </tr>
+                    </table>
+                    <p id="InputTextPara"> 
+                       
+                   
+                       
+                        <span style="display: inline" id='Fname' class='output'></span>
+                        <span><canvas style="display: inline" id="Canvas4" height="20" width="20"> </canvas></span>
+                        <span><canvas style="display: inline" id="Canvas5" height="20" width="20"> </canvas></span>
+                        <span><canvas style="display: inline" id="Canvas6" height="20" width="20"> </canvas></span>
+                       
+                   
+                  
+                        <span style="display: inline" id="Title1" class='output'></span>
+                        <span>   <a href="" id="EmailLink" >  <span id="Email1" class='output'></span></a>
+                            <span style="display: inline" id="Mobile1" class='output'></span></span></br>
+                            <span  style="display: table-row" id="C_name1" class='output'></span></br>
+                        <span>  <span style="display: inline" id="O_phone1" class='output'> </span>
+                            <span style="display: inline" id="Fax1" class='output'></span></span>
+                        <span style="display: table-row" id="AddressLine1" class='output'></span>
+                        <span style="display: table-row" id="AddressLine" class='output'></span>
+                        <span style="display: table-row">    <a href="" id="WebLink"><span id="Website1" class="output"></span></a></span>
+                         </p>
+                         
+                    <table>
+                        <tr> 
+                            <td><div id='Facebook1'><a href="" id='FacebookLink'> <canvas id="canvas" height="20" width="20"></canvas></a></div></td>
+                            <td><div id='Twitter1'><a href="" id='TwitterLink'> <canvas id="canvas1" height="20" width="20"></canvas></a></div></td>
+                            <td><div id='Linkedin1'> <a href="" id='LinkedinLink'> <canvas id="canvas2" height="20" width="20"></canvas></a></div></td>
+                            <td><div id='Google1'><a href="" id='GoogleLink'> <canvas id="canvas3" height="20" width="20"></canvas></a></div></td>
+                        </tr>
+                    </table>
+                </div> 
+            </section>            
+        </section>
+        <div id="CodeFetch">
+        </div>
+
+        <div><button onclick="CodeToShow()">Show Code</button></div>
+        <script src="ScriptMail.js"></script>
+    </body>
 </html>
